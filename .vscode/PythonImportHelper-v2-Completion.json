@@ -1,0 +1,585 @@
+[
+    {
+        "label": "app",
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "isExtraImport": true,
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "server",
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "isExtraImport": true,
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "dash",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dash",
+        "description": "dash",
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "Input",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "Output",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "dash_table",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "dcc",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "html",
+        "importPath": "dash",
+        "description": "dash",
+        "isExtraImport": true,
+        "detail": "dash",
+        "documentation": {}
+    },
+    {
+        "label": "duckdb",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "duckdb",
+        "description": "duckdb",
+        "detail": "duckdb",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.express",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.graph_objects",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.graph_objects",
+        "description": "plotly.graph_objects",
+        "detail": "plotly.graph_objects",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "concurrent.futures",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def db():\n    return duckdb.connect(str(DB_PATH), read_only=True)\ndef frame(sql, params=()):\n    with db() as connection:\n        return connection.execute(sql, params).df()\ndef scalar(sql, params=()):\n    with db() as connection:\n        return connection.execute(sql, params).fetchone()[0]\ndef records(data):\n    if data.empty:",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "frame",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def frame(sql, params=()):\n    with db() as connection:\n        return connection.execute(sql, params).df()\ndef scalar(sql, params=()):\n    with db() as connection:\n        return connection.execute(sql, params).fetchone()[0]\ndef records(data):\n    if data.empty:\n        return []\n    return json.loads(data.to_json(orient=\"records\", date_format=\"iso\"))",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "scalar",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def scalar(sql, params=()):\n    with db() as connection:\n        return connection.execute(sql, params).fetchone()[0]\ndef records(data):\n    if data.empty:\n        return []\n    return json.loads(data.to_json(orient=\"records\", date_format=\"iso\"))\ndef number(value):\n    return f\"{int(value or 0):,}\"\ndef numeric_or_zero(value, as_float=False):",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "records",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def records(data):\n    if data.empty:\n        return []\n    return json.loads(data.to_json(orient=\"records\", date_format=\"iso\"))\ndef number(value):\n    return f\"{int(value or 0):,}\"\ndef numeric_or_zero(value, as_float=False):\n    if value is None or pd.isna(value):\n        return 0.0 if as_float else 0\n    return float(value) if as_float else int(value)",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "number",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def number(value):\n    return f\"{int(value or 0):,}\"\ndef numeric_or_zero(value, as_float=False):\n    if value is None or pd.isna(value):\n        return 0.0 if as_float else 0\n    return float(value) if as_float else int(value)\ndef euro(value):\n    if value is None or pd.isna(value):\n        return \"N/A\"\n    value = float(value)",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "numeric_or_zero",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def numeric_or_zero(value, as_float=False):\n    if value is None or pd.isna(value):\n        return 0.0 if as_float else 0\n    return float(value) if as_float else int(value)\ndef euro(value):\n    if value is None or pd.isna(value):\n        return \"N/A\"\n    value = float(value)\n    for limit, divisor, suffix in ((1e9, 1e9, \"bn\"), (1e6, 1e6, \"m\"), (1e3, 1e3, \"k\")):\n        if abs(value) >= limit:",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "euro",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def euro(value):\n    if value is None or pd.isna(value):\n        return \"N/A\"\n    value = float(value)\n    for limit, divisor, suffix in ((1e9, 1e9, \"bn\"), (1e6, 1e6, \"m\"), (1e3, 1e3, \"k\")):\n        if abs(value) >= limit:\n            return f\"€{value / divisor:.1f}{suffix}\"\n    return f\"€{value:,.0f}\"\ndef season_key(value):\n    start = str(value or \"\").split(\"/\")[0]",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "season_key",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def season_key(value):\n    start = str(value or \"\").split(\"/\")[0]\n    try:\n        year = int(start)\n    except ValueError:\n        return -1\n    if len(start) < 4:\n        return 1900 + year if year >= 90 else 2000 + year\n    return year\ndef empty_figure(message):",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "empty_figure",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def empty_figure(message):\n    figure = go.Figure()\n    figure.add_annotation(text=message, x=.5, y=.5, xref=\"paper\", yref=\"paper\", showarrow=False, font={\"color\": MUTED})\n    figure.update_xaxes(visible=False)\n    figure.update_yaxes(visible=False)\n    figure.update_layout(template=\"plotly_white\", height=370, margin={\"l\": 12, \"r\": 12, \"t\": 12, \"b\": 12})\n    return figure\ndef finish(figure, height=370):\n    figure.update_layout(template=\"plotly_white\", height=height, margin={\"l\": 12, \"r\": 12, \"t\": 18, \"b\": 30}, font={\"family\": \"Trebuchet MS, Segoe UI, sans-serif\", \"color\": INK}, paper_bgcolor=\"white\", plot_bgcolor=\"white\", transition={\"duration\": 420, \"easing\": \"cubic-in-out\"})\n    return figure",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "finish",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def finish(figure, height=370):\n    figure.update_layout(template=\"plotly_white\", height=height, margin={\"l\": 12, \"r\": 12, \"t\": 18, \"b\": 30}, font={\"family\": \"Trebuchet MS, Segoe UI, sans-serif\", \"color\": INK}, paper_bgcolor=\"white\", plot_bgcolor=\"white\", transition={\"duration\": 420, \"easing\": \"cubic-in-out\"})\n    return figure\ndef where_for(season, competition, position, player_ids):\n    clauses, values = [], []\n    if season:\n        clauses.append(\"f.season = ?\")\n        values.append(season)\n    if competition:\n        clauses.append(\"f.competition_name = ?\")",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "where_for",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def where_for(season, competition, position, player_ids):\n    clauses, values = [], []\n    if season:\n        clauses.append(\"f.season = ?\")\n        values.append(season)\n    if competition:\n        clauses.append(\"f.competition_name = ?\")\n        values.append(competition)\n    if position:\n        clauses.append(\"p.main_position = ?\")",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "player_aggregates",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def player_aggregates(season, competition, position, player_ids):\n    where, params = where_for(season, competition, position, player_ids)\n    data = frame(f\"\"\"\n        SELECT p.player_id, SPLIT_PART(MAX(p.player_name), ' (', 1) AS player_name,\n          MAX(p.main_position) AS main_position, MAX(p.citizenship) AS citizenship,\n          MAX(p.current_club) AS current_club, SUM(COALESCE(f.appearances,0)) AS appearances,\n          SUM(COALESCE(f.minutes_played,0)) AS minutes_played, SUM(COALESCE(f.goals,0)) AS goals,\n          SUM(COALESCE(f.assists,0)) AS assists, SUM(COALESCE(f.clean_sheets,0)) AS clean_sheets,\n          SUM(COALESCE(f.yellow_cards,0)) AS yellow_cards, SUM(COALESCE(f.red_cards,0)) AS red_cards\n        FROM performance f JOIN profile p USING (player_id) WHERE 1=1 {where}",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "table",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def table(table_id, columns, page_size=12):\n    return dcc.Loading(\n        dash_table.DataTable(\n            id=table_id,\n            columns=[{\"name\": name, \"id\": key, \"type\": \"numeric\" if numeric else \"text\"} for name, key, numeric in columns],\n            data=[], page_action=\"native\", page_size=page_size, sort_action=\"native\",\n            style_table={\"overflowX\": \"auto\"},\n            style_cell={\"fontFamily\": \"Trebuchet MS, Segoe UI, sans-serif\", \"fontSize\": \"12px\", \"padding\": \"9px\", \"minWidth\": \"76px\", \"maxWidth\": \"230px\", \"whiteSpace\": \"normal\", \"textAlign\": \"left\"},\n            style_header={\"backgroundColor\": \"#edf1e8\", \"color\": INK, \"fontWeight\": \"700\", \"border\": \"0\"},\n            style_data={\"border\": \"0\", \"borderBottom\": \"1px solid #edf0ea\"},",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "card",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def card(title, graph_id, height=370):\n    graph = dcc.Graph(id=graph_id, config=GRAPH_CONFIG, style={\"height\": f\"{height}px\"})\n    loading_graph = dcc.Loading(graph, type=\"circle\", color=GREEN, delay_show=250, delay_hide=120)\n    return html.Section([html.H3(title, style={\"fontSize\": \"16px\", \"margin\": \"0 0 6px\"}), loading_graph], className=\"chart-panel\", style={\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"15px\", \"minWidth\": 0})\ndef kpi(title, component_id):\n    return html.Div([html.Div(title, style={\"fontSize\": \"10px\", \"fontWeight\": \"700\", \"color\": MUTED}), html.Div(id=component_id, style={\"fontSize\": \"23px\", \"fontWeight\": \"700\", \"marginTop\": \"6px\", \"overflowWrap\": \"anywhere\"})], className=\"metric-tile\", style={\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"14px\", \"minWidth\": 0})\ndef network_document(payload):\n    encoded = json.dumps(payload, ensure_ascii=True).replace(\"<\", \"\\\\u003c\")\n    return f\"\"\"<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n    <style>",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "kpi",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def kpi(title, component_id):\n    return html.Div([html.Div(title, style={\"fontSize\": \"10px\", \"fontWeight\": \"700\", \"color\": MUTED}), html.Div(id=component_id, style={\"fontSize\": \"23px\", \"fontWeight\": \"700\", \"marginTop\": \"6px\", \"overflowWrap\": \"anywhere\"})], className=\"metric-tile\", style={\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"14px\", \"minWidth\": 0})\ndef network_document(payload):\n    encoded = json.dumps(payload, ensure_ascii=True).replace(\"<\", \"\\\\u003c\")\n    return f\"\"\"<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n    <style>\n    *{{box-sizing:border-box}} body{{margin:0;background:#10251e;color:#f2f5ed;font-family:'Trebuchet MS',sans-serif;overflow:hidden}}\n      #stage{{position:absolute;inset:0}} canvas{{display:block;width:100%;height:100%}}\n      .top{{position:absolute;z-index:2;left:18px;top:15px;pointer-events:none}} .eyebrow{{font-size:10px;letter-spacing:1.5px;color:#c6ef5a;font-weight:700}}\n      h2{{font-size:18px;margin:5px 0 3px}} .sub{{font-size:11px;color:#b4c4b7}} .tools{{position:absolute;z-index:3;right:14px;top:14px;display:flex;gap:6px}}",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "network_document",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def network_document(payload):\n    encoded = json.dumps(payload, ensure_ascii=True).replace(\"<\", \"\\\\u003c\")\n    return f\"\"\"<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n    <style>\n    *{{box-sizing:border-box}} body{{margin:0;background:#10251e;color:#f2f5ed;font-family:'Trebuchet MS',sans-serif;overflow:hidden}}\n      #stage{{position:absolute;inset:0}} canvas{{display:block;width:100%;height:100%}}\n      .top{{position:absolute;z-index:2;left:18px;top:15px;pointer-events:none}} .eyebrow{{font-size:10px;letter-spacing:1.5px;color:#c6ef5a;font-weight:700}}\n      h2{{font-size:18px;margin:5px 0 3px}} .sub{{font-size:11px;color:#b4c4b7}} .tools{{position:absolute;z-index:3;right:14px;top:14px;display:flex;gap:6px}}\n      button{{border:1px solid #486252;background:#1c392c;color:#eaf2e8;padding:7px 9px;border-radius:4px;font:11px inherit;cursor:pointer}} button[aria-pressed=true]{{background:#c6ef5a;color:#173228;border-color:#c6ef5a}}\n      #tip{{display:none;position:absolute;z-index:4;min-width:150px;max-width:220px;padding:9px 11px;background:#f6f8f2;color:#19352b;border-radius:4px;font-size:11px;line-height:1.5;pointer-events:none;box-shadow:0 5px 18px #0005}}",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "startup",
+        "kind": 2,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "def startup():\n    if not DATA_READY:\n        return [], [], [], [], None, 0\n    with db() as connection:\n        seasons = [row[0] for row in connection.execute(\"SELECT DISTINCT season FROM performance WHERE season IS NOT NULL\").fetchall()]\n        seasons.sort(key=season_key, reverse=True)\n        competitions = connection.execute(\"SELECT competition_name,COUNT(*) n FROM performance WHERE competition_name IS NOT NULL GROUP BY 1 ORDER BY n DESC,competition_name\").fetchall()\n        positions = [row[0] for row in connection.execute(\"SELECT DISTINCT main_position FROM profile WHERE main_position IS NOT NULL ORDER BY 1\").fetchall()]\n        players = connection.execute(\"\"\"\n            WITH latest AS (SELECT player_id,ARG_MAX(value_eur,value_date) AS latest_value FROM market_values WHERE value_eur>0 GROUP BY player_id)",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "ROOT = Path(__file__).parent\nDB_PATH = ROOT / \"Data\" / \"player_data.duckdb\"\nDATA_READY = DB_PATH.exists()\nINK, LIME, PAPER = \"#19352b\", \"#c6ef5a\", \"#f3f5ef\"\nMUTED, GREEN, ORANGE, BLUE = \"#68756e\", \"#71983b\", \"#e8794b\", \"#4e7b83\"\nCOLORS = [GREEN, ORANGE, BLUE, \"#bdc973\", \"#dfb056\", \"#927d68\"]\nGRAPH_CONFIG = {\"displayModeBar\": False}\nMETRICS = {\n    \"goals\": \"Goals\", \"assists\": \"Assists\", \"minutes_played\": \"Minutes\",\n    \"appearances\": \"Appearances\", \"clean_sheets\": \"Clean sheets\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "DB_PATH",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "DB_PATH = ROOT / \"Data\" / \"player_data.duckdb\"\nDATA_READY = DB_PATH.exists()\nINK, LIME, PAPER = \"#19352b\", \"#c6ef5a\", \"#f3f5ef\"\nMUTED, GREEN, ORANGE, BLUE = \"#68756e\", \"#71983b\", \"#e8794b\", \"#4e7b83\"\nCOLORS = [GREEN, ORANGE, BLUE, \"#bdc973\", \"#dfb056\", \"#927d68\"]\nGRAPH_CONFIG = {\"displayModeBar\": False}\nMETRICS = {\n    \"goals\": \"Goals\", \"assists\": \"Assists\", \"minutes_played\": \"Minutes\",\n    \"appearances\": \"Appearances\", \"clean_sheets\": \"Clean sheets\",\n    \"yellow_cards\": \"Yellow cards\", \"red_cards\": \"Red cards\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "DATA_READY",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "DATA_READY = DB_PATH.exists()\nINK, LIME, PAPER = \"#19352b\", \"#c6ef5a\", \"#f3f5ef\"\nMUTED, GREEN, ORANGE, BLUE = \"#68756e\", \"#71983b\", \"#e8794b\", \"#4e7b83\"\nCOLORS = [GREEN, ORANGE, BLUE, \"#bdc973\", \"#dfb056\", \"#927d68\"]\nGRAPH_CONFIG = {\"displayModeBar\": False}\nMETRICS = {\n    \"goals\": \"Goals\", \"assists\": \"Assists\", \"minutes_played\": \"Minutes\",\n    \"appearances\": \"Appearances\", \"clean_sheets\": \"Clean sheets\",\n    \"yellow_cards\": \"Yellow cards\", \"red_cards\": \"Red cards\",\n    \"goals_per_90\": \"Goals / 90\", \"assists_per_90\": \"Assists / 90\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "COLORS",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "COLORS = [GREEN, ORANGE, BLUE, \"#bdc973\", \"#dfb056\", \"#927d68\"]\nGRAPH_CONFIG = {\"displayModeBar\": False}\nMETRICS = {\n    \"goals\": \"Goals\", \"assists\": \"Assists\", \"minutes_played\": \"Minutes\",\n    \"appearances\": \"Appearances\", \"clean_sheets\": \"Clean sheets\",\n    \"yellow_cards\": \"Yellow cards\", \"red_cards\": \"Red cards\",\n    \"goals_per_90\": \"Goals / 90\", \"assists_per_90\": \"Assists / 90\",\n}\nMETRIC_SQL = {\n    \"goals\": \"SUM(COALESCE(f.goals, 0))\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "GRAPH_CONFIG",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "GRAPH_CONFIG = {\"displayModeBar\": False}\nMETRICS = {\n    \"goals\": \"Goals\", \"assists\": \"Assists\", \"minutes_played\": \"Minutes\",\n    \"appearances\": \"Appearances\", \"clean_sheets\": \"Clean sheets\",\n    \"yellow_cards\": \"Yellow cards\", \"red_cards\": \"Red cards\",\n    \"goals_per_90\": \"Goals / 90\", \"assists_per_90\": \"Assists / 90\",\n}\nMETRIC_SQL = {\n    \"goals\": \"SUM(COALESCE(f.goals, 0))\",\n    \"assists\": \"SUM(COALESCE(f.assists, 0))\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "METRICS",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "METRICS = {\n    \"goals\": \"Goals\", \"assists\": \"Assists\", \"minutes_played\": \"Minutes\",\n    \"appearances\": \"Appearances\", \"clean_sheets\": \"Clean sheets\",\n    \"yellow_cards\": \"Yellow cards\", \"red_cards\": \"Red cards\",\n    \"goals_per_90\": \"Goals / 90\", \"assists_per_90\": \"Assists / 90\",\n}\nMETRIC_SQL = {\n    \"goals\": \"SUM(COALESCE(f.goals, 0))\",\n    \"assists\": \"SUM(COALESCE(f.assists, 0))\",\n    \"minutes_played\": \"SUM(COALESCE(f.minutes_played, 0))\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "METRIC_SQL",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "METRIC_SQL = {\n    \"goals\": \"SUM(COALESCE(f.goals, 0))\",\n    \"assists\": \"SUM(COALESCE(f.assists, 0))\",\n    \"minutes_played\": \"SUM(COALESCE(f.minutes_played, 0))\",\n    \"appearances\": \"SUM(COALESCE(f.appearances, 0))\",\n    \"clean_sheets\": \"SUM(COALESCE(f.clean_sheets, 0))\",\n    \"yellow_cards\": \"SUM(COALESCE(f.yellow_cards, 0))\",\n    \"red_cards\": \"SUM(COALESCE(f.red_cards, 0))\",\n    \"goals_per_90\": \"90.0 * SUM(COALESCE(f.goals, 0)) / NULLIF(SUM(COALESCE(f.minutes_played, 0)), 0)\",\n    \"assists_per_90\": \"90.0 * SUM(COALESCE(f.assists, 0)) / NULLIF(SUM(COALESCE(f.minutes_played, 0)), 0)\",",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_SEASON",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "DEFAULT_SEASON = next((season for season in SEASONS if season == \"23/24\"), SEASONS[0] if SEASONS else None)\napp = dash.Dash(__name__)\napp.title = \"Touchline | Player Intelligence\"\nserver = app.server\nPANEL = {\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"15px\"}\nPAGE = {\"fontFamily\": \"'Trebuchet MS', 'Segoe UI', sans-serif\", \"backgroundColor\": PAPER, \"color\": INK, \"minHeight\": \"100vh\", \"paddingBottom\": \"35px\"}\nif not DATA_READY:\n    app.layout = html.Main(style={**PAGE, \"padding\": \"40px\"}, children=[html.H1(\"Touchline: Player Intelligence\"), html.P(\"Build the local dataset before starting the dashboard.\"), html.Pre(\"pip install -r requirements.txt\\npython setup_dataset.py\\npython app.py\")])\nelse:\n    app.layout = html.Div(style=PAGE, children=[",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "app = dash.Dash(__name__)\napp.title = \"Touchline | Player Intelligence\"\nserver = app.server\nPANEL = {\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"15px\"}\nPAGE = {\"fontFamily\": \"'Trebuchet MS', 'Segoe UI', sans-serif\", \"backgroundColor\": PAPER, \"color\": INK, \"minHeight\": \"100vh\", \"paddingBottom\": \"35px\"}\nif not DATA_READY:\n    app.layout = html.Main(style={**PAGE, \"padding\": \"40px\"}, children=[html.H1(\"Touchline: Player Intelligence\"), html.P(\"Build the local dataset before starting the dashboard.\"), html.Pre(\"pip install -r requirements.txt\\npython setup_dataset.py\\npython app.py\")])\nelse:\n    app.layout = html.Div(style=PAGE, children=[\n        html.Header(style={\"backgroundColor\": INK, \"color\": \"white\", \"padding\": \"24px 5vw\"}, children=[html.Div(style={\"maxWidth\": \"1400px\", \"margin\": \"auto\"}, children=[html.Div(\"TOUCHLINE  /  PLAYER INTELLIGENCE\", style={\"color\": LIME, \"fontSize\": \"11px\", \"fontWeight\": \"700\"}), html.H1(\"Global football, player by player\", style={\"fontSize\": \"32px\", \"margin\": \"8px 0\"}), html.P(f\"{ROW_COUNT:,} records across profiles, seasons, clubs, transfers, valuations and availability\", style={\"margin\": 0, \"color\": \"#d3ddd5\"})])]),",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "app.title",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "app.title = \"Touchline | Player Intelligence\"\nserver = app.server\nPANEL = {\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"15px\"}\nPAGE = {\"fontFamily\": \"'Trebuchet MS', 'Segoe UI', sans-serif\", \"backgroundColor\": PAPER, \"color\": INK, \"minHeight\": \"100vh\", \"paddingBottom\": \"35px\"}\nif not DATA_READY:\n    app.layout = html.Main(style={**PAGE, \"padding\": \"40px\"}, children=[html.H1(\"Touchline: Player Intelligence\"), html.P(\"Build the local dataset before starting the dashboard.\"), html.Pre(\"pip install -r requirements.txt\\npython setup_dataset.py\\npython app.py\")])\nelse:\n    app.layout = html.Div(style=PAGE, children=[\n        html.Header(style={\"backgroundColor\": INK, \"color\": \"white\", \"padding\": \"24px 5vw\"}, children=[html.Div(style={\"maxWidth\": \"1400px\", \"margin\": \"auto\"}, children=[html.Div(\"TOUCHLINE  /  PLAYER INTELLIGENCE\", style={\"color\": LIME, \"fontSize\": \"11px\", \"fontWeight\": \"700\"}), html.H1(\"Global football, player by player\", style={\"fontSize\": \"32px\", \"margin\": \"8px 0\"}), html.P(f\"{ROW_COUNT:,} records across profiles, seasons, clubs, transfers, valuations and availability\", style={\"margin\": 0, \"color\": \"#d3ddd5\"})])]),\n        html.Main(style={\"maxWidth\": \"1400px\", \"margin\": \"18px auto\", \"padding\": \"0 16px\"}, children=[",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "server",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "server = app.server\nPANEL = {\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"15px\"}\nPAGE = {\"fontFamily\": \"'Trebuchet MS', 'Segoe UI', sans-serif\", \"backgroundColor\": PAPER, \"color\": INK, \"minHeight\": \"100vh\", \"paddingBottom\": \"35px\"}\nif not DATA_READY:\n    app.layout = html.Main(style={**PAGE, \"padding\": \"40px\"}, children=[html.H1(\"Touchline: Player Intelligence\"), html.P(\"Build the local dataset before starting the dashboard.\"), html.Pre(\"pip install -r requirements.txt\\npython setup_dataset.py\\npython app.py\")])\nelse:\n    app.layout = html.Div(style=PAGE, children=[\n        html.Header(style={\"backgroundColor\": INK, \"color\": \"white\", \"padding\": \"24px 5vw\"}, children=[html.Div(style={\"maxWidth\": \"1400px\", \"margin\": \"auto\"}, children=[html.Div(\"TOUCHLINE  /  PLAYER INTELLIGENCE\", style={\"color\": LIME, \"fontSize\": \"11px\", \"fontWeight\": \"700\"}), html.H1(\"Global football, player by player\", style={\"fontSize\": \"32px\", \"margin\": \"8px 0\"}), html.P(f\"{ROW_COUNT:,} records across profiles, seasons, clubs, transfers, valuations and availability\", style={\"margin\": 0, \"color\": \"#d3ddd5\"})])]),\n        html.Main(style={\"maxWidth\": \"1400px\", \"margin\": \"18px auto\", \"padding\": \"0 16px\"}, children=[\n            html.Section(style={**PANEL, \"display\": \"grid\", \"gridTemplateColumns\": \"repeat(auto-fit,minmax(175px,1fr))\", \"gap\": \"12px\", \"alignItems\": \"end\", \"marginBottom\": \"12px\"}, children=[",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "PANEL",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "PANEL = {\"backgroundColor\": \"white\", \"border\": \"1px solid #e1e6dc\", \"borderRadius\": \"6px\", \"padding\": \"15px\"}\nPAGE = {\"fontFamily\": \"'Trebuchet MS', 'Segoe UI', sans-serif\", \"backgroundColor\": PAPER, \"color\": INK, \"minHeight\": \"100vh\", \"paddingBottom\": \"35px\"}\nif not DATA_READY:\n    app.layout = html.Main(style={**PAGE, \"padding\": \"40px\"}, children=[html.H1(\"Touchline: Player Intelligence\"), html.P(\"Build the local dataset before starting the dashboard.\"), html.Pre(\"pip install -r requirements.txt\\npython setup_dataset.py\\npython app.py\")])\nelse:\n    app.layout = html.Div(style=PAGE, children=[\n        html.Header(style={\"backgroundColor\": INK, \"color\": \"white\", \"padding\": \"24px 5vw\"}, children=[html.Div(style={\"maxWidth\": \"1400px\", \"margin\": \"auto\"}, children=[html.Div(\"TOUCHLINE  /  PLAYER INTELLIGENCE\", style={\"color\": LIME, \"fontSize\": \"11px\", \"fontWeight\": \"700\"}), html.H1(\"Global football, player by player\", style={\"fontSize\": \"32px\", \"margin\": \"8px 0\"}), html.P(f\"{ROW_COUNT:,} records across profiles, seasons, clubs, transfers, valuations and availability\", style={\"margin\": 0, \"color\": \"#d3ddd5\"})])]),\n        html.Main(style={\"maxWidth\": \"1400px\", \"margin\": \"18px auto\", \"padding\": \"0 16px\"}, children=[\n            html.Section(style={**PANEL, \"display\": \"grid\", \"gridTemplateColumns\": \"repeat(auto-fit,minmax(175px,1fr))\", \"gap\": \"12px\", \"alignItems\": \"end\", \"marginBottom\": \"12px\"}, children=[\n                html.Div([html.Label(\"SEASON\", style={\"fontSize\": \"10px\", \"fontWeight\": \"700\", \"color\": MUTED}), dcc.Dropdown(id=\"season-filter\", options=[{\"label\": s, \"value\": s} for s in SEASONS], value=DEFAULT_SEASON, clearable=True, placeholder=\"All seasons\")]),",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "PAGE",
+        "kind": 5,
+        "importPath": "player_dashboard",
+        "description": "player_dashboard",
+        "peekOfCode": "PAGE = {\"fontFamily\": \"'Trebuchet MS', 'Segoe UI', sans-serif\", \"backgroundColor\": PAPER, \"color\": INK, \"minHeight\": \"100vh\", \"paddingBottom\": \"35px\"}\nif not DATA_READY:\n    app.layout = html.Main(style={**PAGE, \"padding\": \"40px\"}, children=[html.H1(\"Touchline: Player Intelligence\"), html.P(\"Build the local dataset before starting the dashboard.\"), html.Pre(\"pip install -r requirements.txt\\npython setup_dataset.py\\npython app.py\")])\nelse:\n    app.layout = html.Div(style=PAGE, children=[\n        html.Header(style={\"backgroundColor\": INK, \"color\": \"white\", \"padding\": \"24px 5vw\"}, children=[html.Div(style={\"maxWidth\": \"1400px\", \"margin\": \"auto\"}, children=[html.Div(\"TOUCHLINE  /  PLAYER INTELLIGENCE\", style={\"color\": LIME, \"fontSize\": \"11px\", \"fontWeight\": \"700\"}), html.H1(\"Global football, player by player\", style={\"fontSize\": \"32px\", \"margin\": \"8px 0\"}), html.P(f\"{ROW_COUNT:,} records across profiles, seasons, clubs, transfers, valuations and availability\", style={\"margin\": 0, \"color\": \"#d3ddd5\"})])]),\n        html.Main(style={\"maxWidth\": \"1400px\", \"margin\": \"18px auto\", \"padding\": \"0 16px\"}, children=[\n            html.Section(style={**PANEL, \"display\": \"grid\", \"gridTemplateColumns\": \"repeat(auto-fit,minmax(175px,1fr))\", \"gap\": \"12px\", \"alignItems\": \"end\", \"marginBottom\": \"12px\"}, children=[\n                html.Div([html.Label(\"SEASON\", style={\"fontSize\": \"10px\", \"fontWeight\": \"700\", \"color\": MUTED}), dcc.Dropdown(id=\"season-filter\", options=[{\"label\": s, \"value\": s} for s in SEASONS], value=DEFAULT_SEASON, clearable=True, placeholder=\"All seasons\")]),\n                html.Div([html.Label(\"COMPETITION\", style={\"fontSize\": \"10px\", \"fontWeight\": \"700\", \"color\": MUTED}), dcc.Dropdown(id=\"competition-filter\", options=[{\"label\": name, \"value\": name} for name, _ in COMPETITIONS], searchable=True, clearable=True, placeholder=\"All competitions\")]),",
+        "detail": "player_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "quote_identifier",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def quote_identifier(value):\n    return '\"' + value.replace('\"', '\"\"') + '\"'\ndef normalize_column(value):\n    return re.sub(r\"[^a-z0-9]+\", \"_\", value.strip().lower()).strip(\"_\") or \"column\"\ndef download_table(item, directory):\n    table_name, (relative_path, is_lfs) = item\n    base = LFS_BASE if is_lfs else RAW_BASE\n    target = directory / f\"{table_name}.csv\"\n    if target.exists() and target.stat().st_size > 1000:\n        with target.open(\"rb\") as source:",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_column",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def normalize_column(value):\n    return re.sub(r\"[^a-z0-9]+\", \"_\", value.strip().lower()).strip(\"_\") or \"column\"\ndef download_table(item, directory):\n    table_name, (relative_path, is_lfs) = item\n    base = LFS_BASE if is_lfs else RAW_BASE\n    target = directory / f\"{table_name}.csv\"\n    if target.exists() and target.stat().st_size > 1000:\n        with target.open(\"rb\") as source:\n            if not source.read(80).startswith(b\"version https://git-lfs.github.com/spec/v1\"):\n                return table_name, target",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "download_table",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def download_table(item, directory):\n    table_name, (relative_path, is_lfs) = item\n    base = LFS_BASE if is_lfs else RAW_BASE\n    target = directory / f\"{table_name}.csv\"\n    if target.exists() and target.stat().st_size > 1000:\n        with target.open(\"rb\") as source:\n            if not source.read(80).startswith(b\"version https://git-lfs.github.com/spec/v1\"):\n                return table_name, target\n        target.unlink()\n    request = urllib.request.Request(",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "add_clean_views",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def add_clean_views(connection):\n    def column(table_name, *candidates):\n        available = {row[0] for row in connection.execute(f\"DESCRIBE {quote_identifier(table_name)}\").fetchall()}\n        match = next((candidate for candidate in candidates if candidate in available), None)\n        return f\"source.{quote_identifier(match)}\" if match else \"NULL\"\n    def typed_view(view_name, table_name, fields):\n        expressions = []\n        for output_name, candidates, data_type in fields:\n            value = column(table_name, *candidates)\n            value_as_text = f\"CAST({value} AS VARCHAR)\"",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "build_database",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def build_database(force=False, keep_source=False):\n    if DATABASE_PATH.exists() and not force:\n        raise FileExistsError(f\"{DATABASE_PATH.name} already exists. Pass --force to rebuild it.\")\n    DATA_DIR.mkdir(parents=True, exist_ok=True)\n    cache_dir = DATA_DIR / \".transfermarkt-cache\"\n    cache_dir.mkdir(exist_ok=True)\n    with tempfile.TemporaryDirectory(prefix=\".football-build-\", dir=DATA_DIR) as temp_name:\n        temp_dir = Path(temp_name)\n        temp_database = temp_dir / DATABASE_PATH.name\n        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "refresh_database_views",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def refresh_database_views():\n    if not DATABASE_PATH.exists():\n        raise FileNotFoundError(f\"{DATABASE_PATH.name} is missing; run setup_dataset.py first.\")\n    connection = duckdb.connect(str(DATABASE_PATH))\n    add_clean_views(connection)\n    connection.execute(\"CHECKPOINT\")\n    connection.close()\n    print(\"Clean analytics views refreshed.\")\ndef main():\n    parser = argparse.ArgumentParser(description=\"Download and index the Transfermarkt football dataset.\")",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"Download and index the Transfermarkt football dataset.\")\n    parser.add_argument(\"--force\", action=\"store_true\", help=\"replace the existing local DuckDB database\")\n    parser.add_argument(\"--keep-source\", action=\"store_true\", help=\"keep downloaded CSVs for faster rebuilds\")\n    parser.add_argument(\"--refresh-views\", action=\"store_true\", help=\"rebuild clean analytics views from the existing database\")\n    arguments = parser.parse_args()\n    if arguments.refresh_views:\n        refresh_database_views()\n    else:\n        build_database(force=arguments.force, keep_source=arguments.keep_source)",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "ROOT = Path(__file__).parent\nDATA_DIR = ROOT / \"Data\"\nDATABASE_PATH = DATA_DIR / \"player_data.duckdb\"\nRAW_BASE = \"https://raw.githubusercontent.com/salimt/football-datasets/main/\"\nLFS_BASE = \"https://media.githubusercontent.com/media/salimt/football-datasets/main/\"\nTABLES = {\n    \"player_profiles\": (\"player_profiles/player_profiles.csv\", False),\n    \"player_performances\": (\"player_performances/player_performances.csv\", True),\n    \"player_market_values\": (\"player_market_value/player_market_value.csv\", False),\n    \"player_injuries\": (\"player_injuries/player_injuries_updated_20260929.csv\", False),",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "DATA_DIR",
+        "kind": 5,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "DATA_DIR = ROOT / \"Data\"\nDATABASE_PATH = DATA_DIR / \"player_data.duckdb\"\nRAW_BASE = \"https://raw.githubusercontent.com/salimt/football-datasets/main/\"\nLFS_BASE = \"https://media.githubusercontent.com/media/salimt/football-datasets/main/\"\nTABLES = {\n    \"player_profiles\": (\"player_profiles/player_profiles.csv\", False),\n    \"player_performances\": (\"player_performances/player_performances.csv\", True),\n    \"player_market_values\": (\"player_market_value/player_market_value.csv\", False),\n    \"player_injuries\": (\"player_injuries/player_injuries_updated_20260929.csv\", False),\n    \"player_national_performances\": (\"player_national_performances/player_national_performances.csv\", False),",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_PATH",
+        "kind": 5,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "DATABASE_PATH = DATA_DIR / \"player_data.duckdb\"\nRAW_BASE = \"https://raw.githubusercontent.com/salimt/football-datasets/main/\"\nLFS_BASE = \"https://media.githubusercontent.com/media/salimt/football-datasets/main/\"\nTABLES = {\n    \"player_profiles\": (\"player_profiles/player_profiles.csv\", False),\n    \"player_performances\": (\"player_performances/player_performances.csv\", True),\n    \"player_market_values\": (\"player_market_value/player_market_value.csv\", False),\n    \"player_injuries\": (\"player_injuries/player_injuries_updated_20260929.csv\", False),\n    \"player_national_performances\": (\"player_national_performances/player_national_performances.csv\", False),\n    \"player_teammates\": (\"player_teammates_played_with/player_teammates_played_with.csv\", False),",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "RAW_BASE",
+        "kind": 5,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "RAW_BASE = \"https://raw.githubusercontent.com/salimt/football-datasets/main/\"\nLFS_BASE = \"https://media.githubusercontent.com/media/salimt/football-datasets/main/\"\nTABLES = {\n    \"player_profiles\": (\"player_profiles/player_profiles.csv\", False),\n    \"player_performances\": (\"player_performances/player_performances.csv\", True),\n    \"player_market_values\": (\"player_market_value/player_market_value.csv\", False),\n    \"player_injuries\": (\"player_injuries/player_injuries_updated_20260929.csv\", False),\n    \"player_national_performances\": (\"player_national_performances/player_national_performances.csv\", False),\n    \"player_teammates\": (\"player_teammates_played_with/player_teammates_played_with.csv\", False),\n    \"player_transfers\": (\"transfer_history/transfer_history.csv\", True),",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "LFS_BASE",
+        "kind": 5,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "LFS_BASE = \"https://media.githubusercontent.com/media/salimt/football-datasets/main/\"\nTABLES = {\n    \"player_profiles\": (\"player_profiles/player_profiles.csv\", False),\n    \"player_performances\": (\"player_performances/player_performances.csv\", True),\n    \"player_market_values\": (\"player_market_value/player_market_value.csv\", False),\n    \"player_injuries\": (\"player_injuries/player_injuries_updated_20260929.csv\", False),\n    \"player_national_performances\": (\"player_national_performances/player_national_performances.csv\", False),\n    \"player_teammates\": (\"player_teammates_played_with/player_teammates_played_with.csv\", False),\n    \"player_transfers\": (\"transfer_history/transfer_history.csv\", True),\n    \"team_details\": (\"team_details/team_details.csv\", False),",
+        "detail": "setup_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "TABLES",
+        "kind": 5,
+        "importPath": "setup_dataset",
+        "description": "setup_dataset",
+        "peekOfCode": "TABLES = {\n    \"player_profiles\": (\"player_profiles/player_profiles.csv\", False),\n    \"player_performances\": (\"player_performances/player_performances.csv\", True),\n    \"player_market_values\": (\"player_market_value/player_market_value.csv\", False),\n    \"player_injuries\": (\"player_injuries/player_injuries_updated_20260929.csv\", False),\n    \"player_national_performances\": (\"player_national_performances/player_national_performances.csv\", False),\n    \"player_teammates\": (\"player_teammates_played_with/player_teammates_played_with.csv\", False),\n    \"player_transfers\": (\"transfer_history/transfer_history.csv\", True),\n    \"team_details\": (\"team_details/team_details.csv\", False),\n    \"team_competitions_seasons\": (\"team_competitions_seasons/team_competitions_seasons.csv\", False),",
+        "detail": "setup_dataset",
+        "documentation": {}
+    }
+]

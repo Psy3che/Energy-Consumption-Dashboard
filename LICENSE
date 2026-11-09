@@ -1,6 +1,6 @@
 MIT License - Educational Use
 
-Copyright (c) 2025 Imran Hossain & Nabid Osman
+Copyright (c) 2026 Linhuaqian
 University of Debrecen - Data Visualization Lab
 
 This project is created for educational and study purposes only.
@@ -30,5 +30,13 @@ This dashboard was developed as part of a university course project at the
 University of Debrecen for the Data Visualization Lab (1st Semester). 
 The project is intended for educational, learning, and academic purposes.
 
-Dataset Source: World Energy Consumption (Kaggle)
-https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption
+DATASET NOTICE:
+The MIT license above applies to this project's code. The football dataset is
+derived from Transfermarkt and provided by the source repository below. That
+repository does not clearly specify dataset licensing or redistribution terms.
+Verify its usage rights with the source before redistributing or deploying the
+data. Downloaded source files and the generated local database are not included
+in this repository.
+
+Dataset source:
+https://github.com/salimt/football-datasets
